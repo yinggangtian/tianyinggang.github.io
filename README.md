@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Monash University Student Portfolio & Blog
 
-## Getting Started
+Welcome to my personal website and blog! This project serves as my digital space to showcase my academic journey, projects, and thoughts on AI, embedded systems, and more.
 
-First, run the development server:
+![Website Preview](https://via.placeholder.com/1200x600?text=Website+Preview)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 About This Project
+This website is built using **Next.js** and styled with **Tailwind CSS**. It features:
+- 🏫 **Student Profile** – Information about my studies at [Monash University](https://www.monash.edu/)
+- 📜 **Blog Section** – Articles on AI, embedded systems, and university life
+- 🔬 **Projects Showcase** – A collection of my academic and personal projects
+- 🌐 **Multilingual Support** – Content available in multiple languages
+
+## 🔧 Tech Stack
+- **Framework**: [Next.js](https://nextjs.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Content Management**: MDX + Contentlayer
+- **Hosting**: Vercel
+- **Linting**: ESLint + Prettier
+
+## 📂 Project Structure
+```
+📦 my-portfolio
+├── content              # Blog and documentation content
+├── public               # Static assets (images, favicon, etc.)
+├── src
+│   ├── components       # Reusable UI components
+│   ├── pages            # Next.js pages
+│   ├── styles           # Tailwind global styles
+│   ├── utils            # Utility functions
+│   ├── hooks            # Custom React hooks
+│   ├── config           # Site-wide configuration
+│   ├── layouts          # Page layouts
+│   └── lib              # API and data fetching logic
+├── next.config.ts       # Next.js configuration
+├── tailwind.config.ts   # Tailwind CSS configuration
+├── tsconfig.json        # TypeScript configuration
+├── package.json         # Dependencies and scripts
+├── vercel.json          # Vercel deployment configuration
+└── eslint.config.mjs    # ESLint configuration
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 One-Click Deployment
+Deploy this project instantly to Vercel:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/tianyinggang/satnaing.dev)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Setup & Deployment
+### 1️⃣ Clone the repository
+```sh
+git clone https://github.com/tianyinggang/satnaing.dev.git
+cd satnaing.dev
+```
+### 2️⃣ Install dependencies
+```sh
+pnpm install  # or npm install / yarn install
+```
+### 3️⃣ Run locally
+```sh
+pnpm run dev  # or npm run dev / yarn dev
+```
+### 4️⃣ Deploy
+- **Vercel Deployment**:
+  ```sh
+  vercel deploy
+  ```
+- **Custom Domain**:
+  Configure in Vercel dashboard for custom domains.
 
-## Learn More
+## ✅ TODO
+- [ ] Improve blog styling and typography
+- [ ] Add dark mode support
+- [ ] Implement search functionality
+- [ ] Optimize images for better performance
+- [ ] Write more technical blogs
 
-To learn more about Next.js, take a look at the following resources:
+## 📬 Contact
+If you have any questions, feel free to connect with me on [LinkedIn](https://www.linkedin.com/) or via email!
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+**Monash University | AI & Embedded Systems Enthusiast**
