@@ -68,11 +68,11 @@ pnpm run dev  # or npm run dev / yarn dev
   Configure in Vercel dashboard for custom domains.
 
 ## ✅ TODO
-- [ ] Improve blog styling and typography
-- [ ] Add dark mode support
-- [ ] Implement search functionality
-- [ ] Optimize images for better performance
-- [ ] Write more technical blogs
+- [ ] SEO page
+- [ ] Establishment of an academic bio
+- [ ] Pull the main information out of the src folder into a json file
+- [ ] Adding the monash logo element
+- [ ] Multi-language support
 
 ## 📬 Contact
 If you have any questions, feel free to connect with me on [LinkedIn](https://www.linkedin.com/) or via email!
