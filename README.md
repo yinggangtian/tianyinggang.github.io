@@ -68,11 +68,13 @@ pnpm run dev  # or npm run dev / yarn dev
   Configure in Vercel dashboard for custom domains.
 
 ## ✅ TODO
-- [ ] SEO page
-- [ ] Establishment of an academic bio
+- [x] Establishment of an academic bio
 - [ ] Pull the main information out of the src folder into a json file
+- [ ] change a pretty font
+- [ ] Optimize animation effects
 - [ ] Adding the monash logo element
 - [ ] Multi-language support
+- [ ] SEO page
 
 ## 📬 Contact
 If you have any questions, feel free to connect with me on [LinkedIn](https://www.linkedin.com/) or via email!
