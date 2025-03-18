@@ -1,6 +1,8 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 import { Metadata } from 'next'
+import Navigation from '@/components/Navigation'
+import { GeistSans } from 'geist/font/sans'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -10,15 +12,15 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Your Name',
-    default: 'Your Name - Personal Blog'
+    template: '%s | Yinggang Tian',
+    default: 'Yinggang Tian',
   },
-  description: 'A blog about programming, design, and technology.',
+  description: 'Personal website of Yinggang Tian - AUTOSAR Architect & Data Science Researcher',
   openGraph: {
-    title: 'Your Name - Personal Blog',
-    description: 'A blog about programming, design, and technology.',
+    title: 'Yinggang Tian',
+    description: 'Personal website of Yinggang Tian - AUTOSAR Architect & Data Science Researcher',
     url: 'https://yourdomain.com',
-    siteName: 'Your Name',
+    siteName: 'Yinggang Tian',
     locale: 'en_US',
     type: 'website',
   },
@@ -34,7 +36,7 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: 'Your Name',
+    title: 'Yinggang Tian',
     card: 'summary_large_image',
   },
   verification: {
@@ -49,7 +51,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className={GeistSans.className}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link
@@ -62,8 +64,11 @@ export default function RootLayout({
         <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#18181b" media="(prefers-color-scheme: dark)" />
       </head>
-      <body className={`${inter.className} antialiased bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100`}>
-        {children}
+      <body className="antialiased bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white">
+        <Navigation />
+        <div className="pt-20">
+          {children}
+        </div>
       </body>
     </html>
   )
