@@ -69,7 +69,7 @@ pnpm run dev  # or npm run dev / yarn dev
 
 ## ✅ TODO
 - [x] Establishment of an academic bio
-- [ ] Pull the main information out of the src folder into a json file
+- [x] Pull the main information out of the src folder into a json file
 - [ ] change a pretty font
 - [ ] Optimize animation effects
 - [ ] Adding the monash logo element

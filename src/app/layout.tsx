@@ -3,6 +3,8 @@ import { Inter } from 'next/font/google'
 import { Metadata } from 'next'
 import Navigation from '@/components/Navigation'
 import { GeistSans } from 'geist/font/sans'
+import Footer from '@/components/Footer'
+import { profile } from '../../profile'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -12,17 +14,13 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Yinggang Tian',
-    default: 'Yinggang Tian',
+    template: `%s | ${profile.name}`,
+    default: profile.name,
   },
-  description: 'Personal website of Yinggang Tian - AUTOSAR Architect & Data Science Researcher',
+  description: `${profile.name} - ${profile.role}. ${profile.introduction.passion}`,
   openGraph: {
-    title: 'Yinggang Tian',
-    description: 'Personal website of Yinggang Tian - AUTOSAR Architect & Data Science Researcher',
-    url: 'https://yourdomain.com',
-    siteName: 'Yinggang Tian',
-    locale: 'en_US',
-    type: 'website',
+    title: profile.name,
+    description: profile.introduction.passion,
   },
   robots: {
     index: true,
@@ -64,11 +62,10 @@ export default function RootLayout({
         <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#18181b" media="(prefers-color-scheme: dark)" />
       </head>
-      <body className="antialiased bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white">
+      <body className="bg-white text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100">
         <Navigation />
-        <div className="pt-20">
-          {children}
-        </div>
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   )

@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { profile } from '../../profile'
 
 export default function Navigation() {
   const pathname = usePathname()
@@ -31,7 +32,7 @@ export default function Navigation() {
               href="/" 
               className="text-sm font-medium tracking-tight hover:text-zinc-900 dark:hover:text-white transition-colors"
             >
-              YINGGANG TIAN
+              {profile.name}
             </Link>
           </div>
           <div className="flex gap-6 items-center">
@@ -56,7 +57,7 @@ export default function Navigation() {
               Blog
             </Link>
             <Link
-              href="https://github.com/yourusername"
+              href={profile.webproject}
               className="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
               target="_blank"
               rel="noopener noreferrer"

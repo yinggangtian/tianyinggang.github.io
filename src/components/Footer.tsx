@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { profile } from '../../profile'
 
 export default function Footer() {
   return (
@@ -19,7 +20,7 @@ export default function Footer() {
             </Link>
           </div>
           <div>
-            © {new Date().getFullYear()} Yinggang Tian. All rights reserved.
+            © {new Date().getFullYear()} {profile.name}. All rights reserved.
           </div>
         </div>
       </div>
