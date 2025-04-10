@@ -1,3 +1,9 @@
+---
+title: "部署nextcloud server"
+date: "2024-03-14"
+tags: ["cloud"]
+excerpt: "自己搭建私有网盘。"
+---
 解决方案：
 技术栈：ubuntu24.02 + AIO + Cloudflare + Reverse Proxy
 Reverse Proxy用Cloudflare Tunnel实现
