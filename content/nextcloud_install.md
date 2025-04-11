@@ -45,7 +45,9 @@ cloudflared --version
 ### 登录 Cloudflare 帐号并创建 tunnel：
 ```bash
 cloudflared tunnel login
+```
 ## 会生成以下内容：
+```bash
 ytia0059@instance-20250410-024649:~$ cloudflared tunnel login
 Please open the following URL and log in with your Cloudflare account:
 
@@ -60,7 +62,9 @@ If you wish to copy your credentials to a server, they have been saved to:
 点击其中的网址，进入cloudflare，会选择自己的域名。
 ```bash
 cloudflared tunnel create nextcloud-tunnel
+```
 ## 会生成以下内容：
+```bash
 Tunnel credentials written to /home/ytia0059/.cloudflared/e9fb1288-5c4e-4afe-9602-e37b76190b53.json. cloudflared chose this file based on where your origin certificate was found. Keep this file secret. To revoke these credentials, delete the tunnel.
 
 Created tunnel nextcloud-tunnel with id e9fb1288-5c4e-4afe-9602-e37b76190b53

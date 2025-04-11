@@ -8,6 +8,7 @@ import { unified } from 'unified'
 import remarkParse from 'remark-parse'
 import remarkHtml from 'remark-html'
 import remarkGfm from 'remark-gfm'
+import rehypeHighlight from 'rehype-highlight'
 
 // Markdown 转 HTML 的函数
 async function markdownToHtml(markdown: string) {
@@ -15,6 +16,7 @@ async function markdownToHtml(markdown: string) {
     .use(remarkParse)
     .use(remarkGfm)
     .use(remarkHtml)
+    .use(rehypeHighlight, { ignoreMissing: true }) // 添加代码块高亮支持
     .process(markdown)
   return result.toString()
 }
@@ -122,4 +124,4 @@ export default async function Post({ params }: Props) {
       />
     </article>
   )
-} 
+}
