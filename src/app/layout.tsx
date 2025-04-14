@@ -2,14 +2,15 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import { Metadata } from 'next'
 import Navigation from '@/components/Navigation'
-import { GeistSans } from 'geist/font/sans'
+// import { GeistSans } from 'geist/font/sans' todo：make a logo front 
 import Footer from '@/components/Footer'
 import { profile } from '../../profile'
 
 const inter = Inter({ 
   subsets: ['latin'],
   display: 'swap',
-  preload: true
+  preload: true,
+  variable: '--font-inter'
 })
 
 export const metadata: Metadata = {
@@ -49,18 +50,19 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={GeistSans.className}>
+    <html lang="en" className={`${inter.variable} font-sans`}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link
-          rel="preload"
-          href="/fonts/your-custom-font.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
+        <meta
+          name="theme-color"
+          content="#ffffff"
+          media="(prefers-color-scheme: light)"
         />
-        <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-        <meta name="theme-color" content="#18181b" media="(prefers-color-scheme: dark)" />
+        <meta
+          name="theme-color"
+          content="#18181b"
+          media="(prefers-color-scheme: dark)"
+        />
       </head>
       <body className="bg-white text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100">
         <Navigation />

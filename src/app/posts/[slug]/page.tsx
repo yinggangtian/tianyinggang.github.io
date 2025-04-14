@@ -8,7 +8,17 @@ import { unified } from 'unified'
 import remarkParse from 'remark-parse'
 import remarkHtml from 'remark-html'
 import remarkGfm from 'remark-gfm'
-import rehypeHighlight from 'rehype-highlight'
+import rehypePrism from 'rehype-prism-plus'
+import 'prismjs/themes/prism-coy.css'                      // 主题样式
+import 'prismjs/plugins/line-numbers/prism-line-numbers.css' // 行号样式
+
+// 定义 Post 类型，明确 tags 是 string[]
+interface Post {
+  title: string
+  date: string
+  content: string
+  tags: string[]
+}
 
 // Markdown 转 HTML 的函数
 async function markdownToHtml(markdown: string) {
@@ -16,58 +26,63 @@ async function markdownToHtml(markdown: string) {
     .use(remarkParse)
     .use(remarkGfm)
     .use(remarkHtml)
-    .use(rehypeHighlight, { ignoreMissing: true }) // 添加代码块高亮支持
+    .use(rehypePrism, {
+      ignoreMissing: true,    // 跳过不支持的语言
+      showLineNumbers: true,  // 显示行号
+      plugins: ['line-numbers'],
+    })
     .process(markdown)
   return result.toString()
 }
 
-interface Props {
-  params: {
-    slug: string
-  }
-}
-
 // 获取文章内容
-async function getPost(slug: string) {
+async function getPost(slug: string): Promise<Post | null> {
   try {
     const filePath = join(process.cwd(), 'content', `${slug}.md`)
     const fileContents = readFileSync(filePath, 'utf8')
     const { data, content } = matter(fileContents)
-    
     const htmlContent = await markdownToHtml(content)
-    
+
     return {
       title: data.title,
       date: data.date,
       content: htmlContent,
-      tags: data.tags || []
+      tags: Array.isArray(data.tags) ? data.tags.map(String) : []
     }
   } catch (error) {
+    console.error(`Error reading post ${slug}:`, error)
     return null
   }
 }
 
-// 生成元数据
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = await getPost(params.slug)
-  
+// Next.js App Router 自动生成的类型里，params 是 Promise<any>
+type PageProps = {
+  params: Promise<{ slug: string }>
+}
+
+// 生成页面元数据
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params
+  const post = await getPost(slug)
+
   if (!post) {
     return {
       title: 'Post Not Found',
-      description: 'The requested post could not be found.'
+      description: 'The requested post could not be found.',
     }
   }
 
   return {
     title: post.title,
-    description: post.content.slice(0, 160)
+    description: post.content.slice(0, 160),
   }
 }
 
-// 文章页面组件
-export default async function Post({ params }: Props) {
-  const post = await getPost(params.slug)
-  
+// 页面组件
+export default async function Post({ params }: PageProps) {
+  const { slug } = await params
+  const post = await getPost(slug)
+
   if (!post) {
     notFound()
   }
@@ -101,11 +116,10 @@ export default async function Post({ params }: Props) {
         
         {post.tags.length > 0 && (
           <div className="flex flex-wrap gap-2">
-            {post.tags.map(tag => (
+            {post.tags.map((tag, idx) => (
               <span
-                key={tag}
-                className="px-2 py-0.5 rounded text-xs font-medium
-                  bg-zinc-100 text-zinc-500 dark:bg-zinc-800/50 dark:text-zinc-400"
+                key={`${tag}-${idx}`}
+                className="px-2 py-0.5 rounded text-xs font-medium bg-zinc-100 text-zinc-500 dark:bg-zinc-800/50 dark:text-zinc-400"
               >
                 {tag}
               </span>
