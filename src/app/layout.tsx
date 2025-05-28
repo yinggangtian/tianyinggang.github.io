@@ -1,9 +1,6 @@
 import './globals.css'
 import { Inter, Libre_Baskerville } from "next/font/google";
 import { Metadata } from 'next'
-import Navigation from '@/components/Navigation'
-import BlogNavigation from '@/components/BlogNavigation'
-// import { GeistSans } from 'geist/font/sans' todo：make a logo front 
 import Footer from '@/components/Footer'
 import { profile } from '../../profile'
 
