@@ -12,7 +12,9 @@ const config: Config = {
     extend: {
       // 1. 扩展 fontFamily，让 font-sans 首选 --font-inter 变量
       fontFamily: {
-        sans: ['var(--font-inter)', ...defaultTheme.fontFamily.sans],
+        sans: 'Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+        serif:
+          'var(--libre-baskerville), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif',
       },
 
       // 2. 保留并合并你现有的 typography 配置
