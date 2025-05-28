@@ -1,12 +1,43 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { profile } from '../../profile'
+import { useEffect, useState } from 'react'
+
+// NavItem component for consistent styling across navigation items
+const NavItem = ({ 
+  children, 
+  isActive = false 
+}: { 
+  children: React.ReactNode; 
+  isActive?: boolean;
+}) => {
+  return (
+    <li className={`font-semibold tracking-tight ${
+      isActive 
+        ? 'text-slate-800 dark:text-white' 
+        : 'text-slate-500 dark:text-zinc-400 hover:text-slate-800 dark:hover:text-white'
+      } transition-colors`}>
+      {children}
+    </li>
+  );
+};
 
 export default function Navigation() {
   const pathname = usePathname()
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   const isActive = (path: string) => {
     if (path === '/') {
@@ -16,51 +47,31 @@ export default function Navigation() {
   }
 
   return (
-    <header className="px-4 pt-8 pb-4 md:px-6 md:pt-10 md:pb-4 text-slate-700 dark:text-zinc-100">
+    <header className={`fixed top-0 left-0 w-full z-50 px-4 py-4 transition-all duration-300 ${
+      scrolled 
+        ? 'bg-white/90 dark:bg-zinc-900/90 backdrop-blur-sm shadow-sm' 
+        : 'bg-transparent'
+    }`}>
       <div className="mx-auto w-full max-w-3xl">
-        <div className="grid grid-cols-1 justify-items-center gap-16">
-          <nav>
-            <ul className="flex flex-wrap justify-center gap-10">
-              <li className="font-semibold tracking-tight text-slate-800 dark:text-white">
-                <Link href="/">Home</Link>
-              </li>
-              <li className="font-semibold tracking-tight text-slate-800 dark:text-white">
-                <Link href="/posts">Blog</Link>
-              </li>
-              <li className="font-semibold tracking-tight text-slate-800 dark:text-white">
-                <Link 
-                  href={profile.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  GitHub
-                </Link>
-              </li>
-            </ul>
-          </nav>
-          <div className="px-4">
-            <div className="grid max-w-lg grid-cols-1 justify-items-center gap-8">
-              <Link href="/" tabIndex={-1}>
-                <div className="relative h-40 w-40 overflow-hidden rounded-full bg-slate-300">
-                  <Image
-                    src="/images/avatar.jpg"
-                    alt={profile.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
+        <nav>
+          <ul className="flex flex-wrap justify-center gap-10">
+            <NavItem isActive={isActive('/')}>
+              <Link href="/">Home</Link>
+            </NavItem>
+            <NavItem isActive={isActive('/posts')}>
+              <Link href="/posts">Blog</Link>
+            </NavItem>
+            <NavItem>
+              <Link 
+                href={profile.github}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
               </Link>
-              <div className="grid grid-cols-1 gap-2 text-center">
-                <h1 className="font-sans font-semibold tracking-tighter text-slate-800 dark:text-white text-3xl md:text-4xl">
-                  <Link href="/">{profile.name}</Link>
-                </h1>
-                <p className="font-serif text-2xl italic leading-normal tracking-tight text-slate-500 dark:text-zinc-400">
-                  {profile.introduction.passion}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+            </NavItem>
+          </ul>
+        </nav>
       </div>
     </header>
   )

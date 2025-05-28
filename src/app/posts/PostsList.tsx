@@ -91,7 +91,7 @@ export function PostsList({ initialPosts, allTags }: PostsListProps) {
   }
 
   return (
-    <main className="px-4 py-8 md:px-6 md:py-10 lg:py-12">
+    <main className="pt-24 px-4 py-8 md:px-6 md:py-10 lg:py-12">
       <div className="mx-auto w-full max-w-3xl">
         <header className="mb-16 space-y-8">
           <div>

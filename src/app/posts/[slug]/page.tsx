@@ -88,7 +88,7 @@ export default async function Post({ params }: PageProps) {
   }
 
   return (
-    <article className="max-w-3xl mx-auto px-8 sm:px-12 py-16">
+    <article className="pt-24 max-w-3xl mx-auto px-8 sm:px-12 py-16">
       <header className="mb-16 space-y-8">
         <div>
           <Link 
