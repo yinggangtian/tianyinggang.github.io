@@ -1,0 +1,139 @@
+/* VS Code-like theme for code blocks */
+
+/* Base code block styling */
+pre[class*="language-"],
+code[class*="language-"] {
+  color: #d4d4d4;
+  font-family: Menlo, Monaco, Consolas, "Andale Mono", "Ubuntu Mono", "Courier New", monospace;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  line-height: 1.8; /* Increased line height for better readability */
+  tab-size: 4;
+  hyphens: none;
+  background: #1e1e1e !important;
+  border-radius: 3px;
+}
+
+/* Code block padding */
+pre[class*="language-"] {
+  padding: 1.25em;
+  margin: 0.75em 0;
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+/* Ensure code blocks don't overflow their container */
+div.prose pre {
+  overflow-x: auto;
+  white-space: pre;
+  word-wrap: normal;
+  max-width: 100%;
+}
+
+/* Inline code styling */
+:not(pre) > code[class*="language-"] {
+  padding: 0.2em 0.3em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+
+/* Token colors based on VS Code's dark theme */
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #6a9955;
+}
+
+.token.punctuation {
+  color: #d4d4d4;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.function-name,
+.token.constant,
+.token.symbol {
+  color: #b5cea8;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.function,
+.token.builtin {
+  color: #ce9178;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.token.variable {
+  color: #d4d4d4;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #569cd6;
+}
+
+.token.class-name {
+  color: #4ec9b0;
+}
+
+.token.regex,
+.token.important {
+  color: #d16969;
+}
+
+/* Line numbers styling */
+.line-numbers .line-numbers-rows {
+  border-right: 1px solid #444 !important;
+  padding-right: 0.8em;
+}
+
+.line-numbers .line-numbers-rows > span:before {
+  color: #858585 !important;
+  padding-right: 0.8em;
+  line-height: 1.8; /* Match the increased line height */
+}
+
+/* Highlight specific lines */
+.line-highlight {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+/* Inline code in regular text */
+:not(pre) > code {
+  background-color: #2d2d2d;
+  color: #e0e0e0;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-family: Menlo, Monaco, Consolas, "Andale Mono", "Ubuntu Mono", "Courier New", monospace;
+}
+
+/* Markdown code block background */
+.prose pre {
+  background-color: #1e1e1e !important;
+  border: 1px solid #333 !important;
+}
+
+/* Table code block handling */
+.prose table {
+  display: block;
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.prose table pre {
+  white-space: pre;
+  word-wrap: normal;
+}

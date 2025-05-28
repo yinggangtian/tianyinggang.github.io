@@ -1,0 +1,24 @@
+/* Improved line spacing for code blocks */
+.prose pre {
+  margin: 1.5em 0;
+}
+
+.prose code {
+  line-height: 1.8;
+}
+
+/* Add space between lines in code blocks */
+.prose pre code .line {
+  padding: 0.2em 0;
+}
+
+/* Add space in tables with code */
+.prose table code {
+  line-height: 1.8;
+}
+
+/* Ensure proper spacing in line numbers */
+.line-numbers-rows > span {
+  line-height: 1.8;
+  padding: 0.2em 0;
+}

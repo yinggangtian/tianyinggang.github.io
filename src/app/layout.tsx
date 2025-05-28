@@ -1,8 +1,6 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { Inter, Libre_Baskerville } from "next/font/google";
 import { Metadata } from 'next'
-import Navigation from '@/components/Navigation'
-// import { GeistSans } from 'geist/font/sans' todo：make a logo front 
 import Footer from '@/components/Footer'
 import { profile } from '../../profile'
 
@@ -12,6 +10,13 @@ const inter = Inter({
   preload: true,
   variable: '--font-inter'
 })
+const libre_baskerville = Libre_Baskerville({
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  weight: ["400", "700"],
+  variable: "--libre-baskerville",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -49,8 +54,13 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  // Using pathname logic in client component instead
+
   return (
-    <html lang="en" className={`${inter.variable} font-sans`}>
+    <html 
+      lang="en" 
+      className={`${inter.className} ${libre_baskerville.className}`}
+    >
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <meta
@@ -64,10 +74,11 @@ export default function RootLayout({
           media="(prefers-color-scheme: dark)"
         />
       </head>
-      <body className="bg-white text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100">
-        <Navigation />
-        <main>{children}</main>
-        <Footer />
+      <body className="overflow-x-hidden antialiased bg-white text-slate-700 dark:bg-zinc-900 dark:text-zinc-100">
+        <main>
+          {children}
+          <Footer />
+        </main>
       </body>
     </html>
   )

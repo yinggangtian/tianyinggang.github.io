@@ -1,4 +1,4 @@
-import Footer from '@/components/Footer'
+import BlogNavigation from '@/components/BlogNavigation'
 
 export default function PostsLayout({
   children,
@@ -6,11 +6,9 @@ export default function PostsLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className="min-h-screen flex flex-col">
-      <main className="flex-1">
-        {children}
-      </main>
-      <Footer />
+    <div className="min-h-screen">
+      <BlogNavigation />
+      {children}
     </div>
   )
-} 
+}

@@ -24,7 +24,7 @@ const NavItem = ({
   );
 };
 
-export default function Navigation() {
+export default function BlogNavigation() {
   const pathname = usePathname()
   const [scrolled, setScrolled] = useState(false)
 

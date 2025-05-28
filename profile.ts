@@ -11,22 +11,7 @@ export const profile = {
     passion: "Passionate about applying machine learning and data science to solve real-world problems.",
     current: "Currently pursuing research at Monash University."
   },
-  education: [
-    {
-      degree: "Master of Data Science",
-      school: "Monash University",
-      period: "2023 - Present",
-      location: "Melbourne, Australia",
-      logo: "/images/monash-logo.svg"
-    },
-    {
-      degree: "Master of Data Science",
-      school: "Monash University",
-      period: "2023 - Present",
-      location: "Melbourne, Australia",
-      logo: "/images/monash-logo.svg"
-    }
-  ],
+
   experiences: [
     {
       title: "AUTOSAR Architect",
@@ -70,5 +55,21 @@ export const profile = {
       title: "Machine Learning in Healthcare",
       description: "Focusing on applying advanced machine learning techniques to solve healthcare challenges."
     }
-  ]
+  ],
+    education: [
+    {
+      degree: "Master of Artificial Intelligence",
+      school: "Monash University",
+      period: "2023 - Present",
+      location: "Melbourne, Australia",
+      logo: "/images/monash-logo.svg"
+    },
+    {
+      degree: "Bachelor of Comminication Engineering",
+      school: "Xi'AN MINGDE INSTITUTE OF TECHNOLOGY",
+      period: "2016 - 2020",
+      location: "Xi'An, China",
+      logo: "/images/mingde-logo.png"
+    }
+  ],
 } as const; 
