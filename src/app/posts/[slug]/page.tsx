@@ -9,8 +9,9 @@ import remarkParse from 'remark-parse'
 import remarkHtml from 'remark-html'
 import remarkGfm from 'remark-gfm'
 import rehypePrism from 'rehype-prism-plus'
-import 'prismjs/themes/prism-coy.css'                      // 主题样式
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css' // 行号样式
+import '@/app/vscode-theme.css' // VS Code风格主题
+import '@/app/code-spacing.css' // 改进代码间距
 
 // 定义 Post 类型，明确 tags 是 string[]
 interface Post {
@@ -132,7 +133,9 @@ export default async function Post({ params }: PageProps) {
         className="prose prose-zinc dark:prose-invert max-w-none
           prose-headings:scroll-mt-20
           prose-a:text-blue-600 dark:prose-a:text-blue-400
-          prose-pre:bg-zinc-100 dark:prose-pre:bg-zinc-800 prose-pre:p-4 prose-pre:rounded-lg
+          prose-pre:p-0 prose-pre:rounded-lg prose-pre:overflow-x-auto
+          prose-code:text-zinc-800 dark:prose-code:text-zinc-200
+          prose-pre:leading-relaxed
           prose-img:rounded-lg prose-img:shadow-md"
         dangerouslySetInnerHTML={{ __html: post.content }}
       />

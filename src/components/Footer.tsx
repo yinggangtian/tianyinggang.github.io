@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="px-4 py-8 md:px-6 md:py-10 lg:py-12 border-t border-slate-200 dark:border-zinc-800/50">
       <div className="mx-auto w-full max-w-3xl">
-        <div className="flex flex-col items-center justify-center text-slate-500 dark:text-zinc-400 space-y-4">
+        <div className="flex flex-col items-center justify-center text-slate-500 dark:text-zinc-400">
           <div className="flex items-center gap-1">
             <span>Created with</span>
             <Link 
@@ -18,9 +18,8 @@ export default function Footer() {
             >
               Next.js
             </Link>
-          </div>
-          <div className="font-serif tracking-tight">
-            © {new Date().getFullYear()} {profile.name}. All rights reserved.
+            <span className="mx-1">©</span>
+            <span>{new Date().getFullYear()} {profile.name}. All rights reserved.</span>
           </div>
         </div>
       </div>

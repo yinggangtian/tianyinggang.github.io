@@ -36,7 +36,7 @@ export default function Hero() {
           </div>
 
           {/* Social Links */}
-          <div className="flex items-center justify-center gap-8 mt-8">
+          <div className="flex items-center justify-center gap-4 mt-8">
             <a
               href={`mailto:${profile.email}`}
               target="_blank"
@@ -75,8 +75,8 @@ export default function Hero() {
             </a>
           </div>
           
-          <hr className="h-px w-1/2 border-0 bg-slate-200 dark:bg-zinc-800 md:max-w-sm mx-auto my-4" />
-          <p className="font-serif text-lg md:text-xl leading-relaxed tracking-normal text-slate-600 dark:text-zinc-400 text-center mb-12">
+          <hr className="h-px w-1/2 border-0 bg-slate-200 dark:bg-zinc-800 md:max-w-sm mx-auto" />
+          <p className="font-serif text-lg md:text-xl leading-relaxed tracking-normal text-slate-600 dark:text-zinc-400 text-center">
             {profile.introduction.current}
           </p>
         </div>

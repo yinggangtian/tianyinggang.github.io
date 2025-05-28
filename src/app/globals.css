@@ -3,6 +3,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --code-bg: #f5f5f5;
+  --code-fg: #24292e;
 }
 
 @theme inline {
@@ -16,6 +18,8 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --code-bg: #1e1e1e;
+    --code-fg: #e6e6e6;
   }
 }
 
@@ -23,4 +27,31 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Inline code styling */
+:not(pre) > code {
+  background-color: var(--code-bg);
+  color: var(--code-fg);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-family: Menlo, Monaco, Consolas, "Andale Mono", "Ubuntu Mono", "Courier New", monospace;
+  font-size: 0.9em;
+}
+
+/* Fix for long code lines */
+pre {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+pre > code {
+  display: inline-block;
+  min-width: 100%;
+  line-height: 1.8;
+}
+
+/* Improve code block line spacing */
+.prose pre code {
+  padding: 0.25em 0;
 }
