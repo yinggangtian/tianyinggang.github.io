@@ -18,7 +18,17 @@ export const profile = {
       company: "HL Mando",
       period: "2023 - 2025",
       location: "Suzhou, China",
-      description: "Led algorithm design and prototype development for braking-related Advanced Driver Assistance Systems (ADAS). Developed perception and decision logic modules that integrate sensor inputs and produce braking decisions under real-time constraints; implemented core modules in C++/Python and collaborated with embedded teams for vehicle integration. Worked on dataset curation and annotation pipelines for scenario-driven testing; designed offline training/validation workflows and online evaluation metrics for braking scenarios. Performed runtime profiling and optimization to meet hard latency deadlines: identified CPU/GPU and I/O bottlenecks, applied algorithmic simplifications and pipeline optimizations to reduce inference latency; prepared artifacts for OTA/prototype deployment. Coordinated with system engineers on ECU interfacing, diagnostic logs, and safety checks; contributed design documents and verification reports.",
+      description: [
+        "Led algorithm design and prototype development for braking-related Advanced Driver Assistance Systems (ADAS).",
+        "Developed perception and decision logic modules that integrate sensor inputs and produce braking decisions under real-time constraints.",
+        "Implemented core modules in C++/Python and collaborated with embedded teams for vehicle integration.",
+        "Worked on dataset curation and annotation pipelines for scenario-driven testing.",
+        "Designed offline training/validation workflows and online evaluation metrics for braking scenarios.",
+        "Performed runtime profiling and optimization to meet hard latency deadlines: identified CPU/GPU and I/O bottlenecks, applied algorithmic simplifications and pipeline optimizations to reduce inference latency.",
+        "Prepared artifacts for OTA/prototype deployment.",
+        "Coordinated with system engineers on ECU interfacing, diagnostic logs, and safety checks.",
+        "Contributed design documents and verification reports."
+      ],
       logo: "/images/hl-mando-logo.png"
     },
     {
@@ -26,7 +36,12 @@ export const profile = {
       company: "Huawei",
       period: "2020 - 2022",
       location: "Suzhou, China",
-      description: "Contributed to development of vehicle gateway platform: diagnostics, network management, software upgrade and routing modules. Independently developed a vehicle gateway product for Jiangling project - end-to-end development including detailed design, testing and documentation. Hands-on experience with CAN, Ethernet, TBOX comms, UDS diagnostics; familiar with Vector CANoe, Lauterbach, ZCANPro workflows.",
+      description: [
+        "Contributed to development of vehicle gateway platform: diagnostics, network management, software upgrade and routing modules.",
+        "Independently developed a vehicle gateway product for Jiangling project - end-to-end development including detailed design, testing and documentation.",
+        "Hands-on experience with CAN, Ethernet, TBOX communications, UDS diagnostics.",
+        "Familiar with Vector CANoe, Lauterbach, ZCANPro workflows."
+      ],
       logo: "/images/huawei-logo.png"
     },
     {
@@ -34,7 +49,9 @@ export const profile = {
       company: "Sercomm",
       period: "2018 - 2019",
       location: "Suzhou, China",
-      description: "Developed embedded software for IoT devices.",
+      description: [
+        "Developed embedded software for IoT devices."
+      ],
       logo: "/images/sercomm-logo.png"
     },
     {
@@ -42,18 +59,31 @@ export const profile = {
       company: "Microsoft",
       period: "2017 - 2018",
       location: "Suzhou, China",
-      description: "Developed web applications using .NET and React.",
+      description: [
+        "Developed web applications using .NET and React."
+      ],
       logo: "/images/microsoft-logo.png"
     }
   ],
   research: [
     {
       title: "AI-Powered Interactive System Design and Implementation ",
-      description: "Cloud-Deployed AI System: Designed scalable architecture for AI voice recognition API optimization using machine learning. Hardware Integration: Developed custom hardware circuits for AI voice recognition interaction systems. Advanced Neural Networks: Implemented and compared CNN vs RNN architectures for speaker recognition, establishing Bidirectional RNN (BRNN) as optimal network structure. Loss Function Optimization: Comprehensive analysis of 8 loss functions (Sigmoid Cross-Entropy, Softmax Loss, Triplet Loss, Center Loss, etc.) for speaker recognition performance. Framework Proficiency: Gained expertise in PyTorch and TensorFlow for deep learning implementation. Industry Practices: Applied DevOps and Agile development methodologies in research environment."
+      description: [
+        "Cloud-Deployed AI System: Designed scalable architecture for AI voice recognition API optimization using machine learning.",
+        "Hardware Integration: Developed custom hardware circuits for AI voice recognition interaction systems.",
+        "Advanced Neural Networks: Implemented and compared CNN vs RNN architectures for speaker recognition, establishing Bidirectional RNN (BRNN) as optimal network structure.",
+        "Loss Function Optimization: Comprehensive analysis of 8 loss functions (Sigmoid Cross-Entropy, Softmax Loss, Triplet Loss, Center Loss, etc.) for speaker recognition performance.",
+        "Framework Proficiency: Gained expertise in PyTorch and TensorFlow for deep learning implementation.",
+        "Industry Practices: Applied DevOps and Agile development methodologies in research environment."
+      ],
     },
     {
       title: "Microsoft Xiaoyuan COVID-19 Q&A Chatbot ",
-      description: "Built comprehensive knowledge base for COVID-19 related inquiries during Wuhan outbreak. Deployed chatbot across WeChat and open-source communities. Core Technology: Microsoft Dialog Engine for intelligent pandemic response system."
+      description: [
+        "Built comprehensive knowledge base for COVID-19 related inquiries during Wuhan outbreak.",
+        "Deployed chatbot across WeChat and open-source communities.",
+        "Core Technology: Microsoft Dialog Engine for intelligent pandemic response system."
+      ]
     }
   ],
     education: [
