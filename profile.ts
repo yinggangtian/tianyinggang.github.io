@@ -2,11 +2,11 @@ export const profile = {
   name: "Yinggang Tian",
   role: "Data Science Researcher",
   email: "yinggang.tian@monash.edu",
-  github: "https://github.com/tianyinggang",
+  github: "https://github.com/yinggangtian/",
   linkedin: "https://www.linkedin.com/in/yinggang-tian",
   avatar: "/images/avatar.jpg",
-  webproject:"https://github.com/tianyinggang/webproject",
-  instagram:"https://www.instagram.com/tianyinggang",
+  webproject:"https://github.com/yinggangtian/tianyinggang.github.io",
+  instagram:"https://www.instagram.com/tianyinggang/",
   introduction: {
     passion: "Passionate about applying machine learning and data science to solve real-world problems.",
     current: "Currently pursuing research at Monash University."
