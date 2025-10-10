@@ -1,9 +1,9 @@
 export const profile = {
-  name: "Yinggang Tian",
+  name: "Felix Tian",
   role: "AI Engineer",
   email: "ytia0059@student.monash.edu",
   github: "https://github.com/yinggangtian/",
-  linkedin: "https://www.linkedin.com/in/yinggang-tian",
+  linkedin: "https://www.linkedin.com/in/felix-tian",
   avatar: "/images/avatar.jpg",
   webproject:"https://github.com/yinggangtian/tianyinggang.github.io",
   instagram:"https://www.instagram.com/tianyinggang/",
